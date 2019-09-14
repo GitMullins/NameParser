@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NameParser
@@ -8,7 +9,11 @@ namespace NameParser
     {
         public Name ParseName(string nameToParse)
         {
-            return new Name();
+            var splitNames = nameToParse.Split(" ");
+            var name = new Name();
+            name.FirstName = splitNames.First();
+            name.LastName = splitNames.Last();
+            return name;
         }
 
         public class Name

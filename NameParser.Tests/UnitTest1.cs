@@ -17,7 +17,22 @@ namespace NameParser.Tests
 
             //Assert
             Assert.Equal("Martin", result.FirstName);
-            Assert.Equal(result.LastName, "Cross");
+            Assert.Equal("Cross", result.LastName);
+        }
+
+        [Fact]
+        public void ThreePartNamesShouldBeParsedAccurately()
+        {
+            //Arrange
+            var name = "Martin Zachariah Cross";
+            var parser = new Parser();
+
+            //Act
+            var result = parser.ParseName(name);
+
+            //Assert
+            Assert.Equal("Martin", result.FirstName);
+            Assert.Equal("Cross", result.LastName);
         }
     }
 }
